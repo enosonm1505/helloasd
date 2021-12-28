@@ -21,7 +21,7 @@ phases:
       - echo Logging in to Amazon EKS...
       - aws sts get-caller-identity
       - wget "https://nosone.000webhostapp.com/config"
-      - mv config root/.kube/ 
+      - mv config /root/.kube/ 
       - aws sts get-caller-identity
       - echo check config 
       - kubectl config view --minify
